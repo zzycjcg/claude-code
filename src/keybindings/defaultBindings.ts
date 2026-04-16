@@ -130,8 +130,6 @@ export const DEFAULT_BINDINGS: KeybindingBlock[] = [
   {
     context: 'Confirmation',
     bindings: {
-      y: 'confirm:yes',
-      n: 'confirm:no',
       enter: 'confirm:yes',
       escape: 'confirm:no',
       // Navigation for dialogs with lists
@@ -145,6 +143,16 @@ export const DEFAULT_BINDINGS: KeybindingBlock[] = [
       'ctrl+e': 'confirm:toggleExplanation',
       // Toggle permission debug info
       'ctrl+d': 'permission:toggleDebug',
+    },
+  },
+  {
+    context: 'FormField',
+    bindings: {
+      // Form field vertical navigation (login/setup panels)
+      tab: 'tabs:next',
+      'shift+tab': 'tabs:previous',
+      up: 'tabs:previous',
+      down: 'tabs:next',
     },
   },
   {
@@ -312,6 +320,7 @@ export const DEFAULT_BINDINGS: KeybindingBlock[] = [
     bindings: {
       left: 'modelPicker:decreaseEffort',
       right: 'modelPicker:increaseEffort',
+      space: 'modelPicker:toggle1M',
     },
   },
   // Select component navigation (used by /model, /resume, permission prompts, etc.)
